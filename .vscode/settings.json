@@ -4,6 +4,6 @@
     "deno.unstable": true,
     "deno.suggest.imports.hosts": {
         "https://unpkg.com": false,
-        "https://cdn.skypack.dev": false
+        "https://cdn.skypack.dev": true
     }
 }
