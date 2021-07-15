@@ -1,7 +1,17 @@
+unstable: true
+
 scripts:
   build:
     - vr ensureDir ./dist
-    - deno bundle --unstable ./src/main.ts ./dist/app.js
+    - deno bundle ./src/main.ts ./dist/app.js
     - vr copy ./src/index.html ./dist/index.html
-  copy: deno run --unstable --allow-read --allow-write ./scripts/copy.ts
-  ensureDir: deno run --unstable --allow-read --allow-write ./scripts/ensureDir.ts
+  copy: 
+    allow:
+      - read
+      - write
+    cmd: ./scripts/copy.ts
+  ensureDir:
+    allow:
+      - read
+      - write
+    cmd: ./scripts/ensureDir.ts
